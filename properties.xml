@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+<entry key="selection.count">5</entry>     
+<entry key="read.seconds">2</entry> 
+<entry key="rec.seconds">5</entry>
+
+
+<entry key="aw.count">15</entry>     
+
+<entry key="aw.intro.deText">Euch werden hintereinander 5 verschiedene Begrifflichkeiten angezeigt.\nIhr habt jeweils 15 Sekunden Zeit, um den Begriff pantomimisch zu erklären.\nViel Spass!</entry>     
+
+<entry key="aw.1.name">name1</entry>
+<entry key="aw.1.deText">Schwimmt wie die Fische im Meer herum!</entry>
+<entry key="aw.1.enText">hello you nice people...</entry>
+<entry key="aw.1.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.1.persons">java.util.Random@66388993</entry>
+<entry key="aw.1.prio">java.util.Random@7cd0a5d9</entry>
+
+<entry key="aw.2.name">name2</entry>
+<entry key="aw.2.deText">Malt Herzen in die Luft!</entry>
+<entry key="aw.2.enText">hello you nice people...</entry>
+<entry key="aw.2.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.2.prio">java.util.Random@9d04653</entry>
+<entry key="aw.2.persons">java.util.Random@48b8f82d</entry>
+
+<entry key="aw.3.name">name3</entry>
+<entry key="aw.3.deText">Tanzt wie in der Disco!</entry>
+<entry key="aw.3.enText">hello you nice people...</entry>
+<entry key="aw.3.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.3.prio">java.util.Random@67ad77a7</entry>
+<entry key="aw.3.persons">java.util.Random@2d8aaa1e</entry>
+
+<entry key="aw.4.name">name4</entry>
+<entry key="aw.4.deText">Streck euch, als wenn ihr grade aus dem Bett kämt!</entry>
+<entry key="aw.4.enText">hello you nice people...</entry>
+<entry key="aw.4.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.4.prio">java.util.Random@6aa6aeed</entry>
+<entry key="aw.4.persons">java.util.Random@6526804e</entry>
+
+<entry key="aw.5.name">name5</entry>
+<entry key="aw.5.deText">Umarmt euch gegenseitig!</entry>
+<entry key="aw.5.enText">hello you nice people...</entry>
+<entry key="aw.5.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.5.prio">java.util.Random@42b1b4c3</entry>
+<entry key="aw.5.persons">java.util.Random@20d2906a</entry>
+
+<entry key="aw.6.name">name6</entry>
+<entry key="aw.6.deText">Wiegt ein Kind in eueren Armen!</entry>
+<entry key="aw.6.enText">hello you nice people...</entry>
+<entry key="aw.6.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.6.prio">java.util.Random@60072ffb</entry>
+<entry key="aw.6.persons">java.util.Random@77df38fd</entry>
+
+<entry key="aw.7.name">name7</entry>
+<entry key="aw.7.deText">Rührt in einem großen Kochtopf herum!</entry>
+<entry key="aw.7.enText">hello you nice people...</entry>
+<entry key="aw.7.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.7.prio">java.util.Random@6016a786</entry>
+<entry key="aw.7.persons">java.util.Random@6f507fb2</entry>
+
+<entry key="aw.8.name">name8</entry>
+<entry key="aw.8.deText">Jubelt, als hättet ihr grade im Fußball gewonnen!</entry>
+<entry key="aw.8.enText">hello you nice people...</entry>
+<entry key="aw.8.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.8.prio">java.util.Random@defb836</entry>
+<entry key="aw.8.persons">java.util.Random@7526e85f</entry>
+
+<entry key="aw.9.name">name9</entry>
+<entry key="aw.9.deText">Tut so, als wenn ihr rauchen würdet!</entry>
+<entry key="aw.9.enText">hello you nice people...</entry>
+<entry key="aw.9.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.9.prio">java.util.Random@4d61f10f</entry>
+<entry key="aw.9.persons">java.util.Random@59193779</entry>
+
+<entry key="aw.10.name">name10</entry>
+<entry key="aw.10.deText">Spielt Klavier!</entry>
+<entry key="aw.10.enText">hello you nice people...</entry>
+<entry key="aw.10.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.10.prio">java.util.Random@68916a2</entry>
+<entry key="aw.10.persons">java.util.Random@122ce908</entry>
+
+<entry key="aw.11.name">name11</entry>
+<entry key="aw.11.deText">Schreibt eine E-Mail auf dem Computer!</entry>
+<entry key="aw.11.enText">hello you nice people...</entry>
+<entry key="aw.11.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.11.prio">java.util.Random@4277158a</entry>
+<entry key="aw.11.persons">java.util.Random@1827391d</entry>
+
+<entry key="aw.12.name">name12</entry>
+<entry key="aw.12.deText">Fahrt Auto!</entry>
+<entry key="aw.12.enText">hello you nice people...</entry>
+<entry key="aw.12.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.12.prio">java.util.Random@3716ab4e</entry>
+<entry key="aw.12.persons">java.util.Random@3148aa23</entry>
+
+<entry key="aw.13.name">name13</entry>
+<entry key="aw.13.deText">Schämt euch!</entry>
+<entry key="aw.13.enText">hello you nice people...</entry>
+<entry key="aw.13.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.13.prio">java.util.Random@1999f91c</entry>
+<entry key="aw.13.persons">java.util.Random@4bb1aa65</entry>
+
+<entry key="aw.14.name">name14</entry>
+<entry key="aw.14.deText">Zeigt an den Horizont, als hättet ihr etwas besonderes gesehen!</entry>
+<entry key="aw.14.enText">hello you nice people...</entry>
+<entry key="aw.14.esText">buenos dias vos gentes mui agredable...</entry>
+<entry key="aw.14.prio">java.util.Random@7d29f3b5</entry>
+<entry key="aw.14.persons">java.util.Random@4d3f3045</entry>
+
+<entry key="aw.15.name">name15</entry>    
+<entry key="aw.15.deText">Dirigiert ein Orchester!</entry>
+<entry key="aw.15.enText">hello you nice people...</entry>
+<entry key="aw.15.esText">buenos dias vos gentes mui agredable...</entry>   
+<entry key="aw.15.prio">java.util.Random@7d2a1e44</entry>
+<entry key="aw.15.persons">java.util.Random@5829428e</entry>
+
+</properties>
