@@ -3,13 +3,21 @@
 <properties>
 
 <entry key="selection.count">5</entry>     
-<entry key="read.seconds">2</entry> 
-<entry key="rec.seconds">5</entry>
+<entry key="read.seconds">3</entry> 
+<entry key="rec.seconds">7</entry>
 
 
 <entry key="aw.count">15</entry>     
 
-<entry key="aw.intro.deText">Euch werden hintereinander 5 verschiedene Begrifflichkeiten angezeigt.\nIhr habt jeweils 15 Sekunden Zeit, um den Begriff pantomimisch zu erklären.\nViel Spass!</entry>     
+<entry key="aw.intro.deText">Euch werden hintereinander\n5 verschiedene Begrifflichkeiten angezeigt.\nIhr habt jeweils 15 Sekunden Zeit,\num den Begriff pantomimisch zu erklären.\n\nViel Spass!</entry>     
+<entry key="aw.intro.enText">Hello my dear!!!#Ihr habt jeweils 15 Sekunden Zeit, um den Begriff pantomimisch zu erklären.\nViel Spass!</entry>     
+<entry key="aw.intro.esText">Cochones!!!\nIhr habt jeweils 15 Sekunden Zeit, um den Begriff pantomimisch zu erklären.\nViel Spass!</entry>     
+
+<entry key="aw.thank.deText">Ihr habt es geschafft!\n\nVielen Dank für euer Mitmachen!</entry>     
+<entry key="aw.thank.enText">You made it!\n\nThank you for your effort!</entry>     
+<entry key="aw.thank.esText">Esta fino!\n\nMuchas gracias!</entry>     
+
+
 
 <entry key="aw.1.name">name1</entry>
 <entry key="aw.1.deText">Schwimmt wie die Fische im Meer herum!</entry>

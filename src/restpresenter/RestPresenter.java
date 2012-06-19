@@ -30,6 +30,8 @@ public class RestPresenter {
     public static int selectionCount;
     public static int readSeconds;
     public static int recSeconds;
+    public static int screenWidth;
+    public static int screenHeight;
 
     /**
      * @param args the command line arguments
@@ -81,11 +83,16 @@ public class RestPresenter {
                     
             
             rpUI = new RestPresenterUI();
-            rpUI.cleanScreen();
             rpUI.setVisible(true);
             rpUI.setExtendedState(rpUI.getExtendedState() | JFrame.MAXIMIZED_BOTH);
       
+            screenWidth = (int) Math.round(rpUI.getSize().getWidth());
+            screenHeight = (int) Math.round(rpUI.getSize().getHeight());
+            
+            rpUI.initScreen();
+               
             runRecordingSession(Language.de);
+            
             
     }       
      
@@ -191,17 +198,18 @@ public class RestPresenter {
          
          System.out.println("Start Recording Session!");
          
-         System.out.println("Show Introduction!");
+        rpUI.initiateIntro(_language);
          
-         wait(5);
+        
          
           int[] instrSelect = getInstructionSelection();
             
         for(int i : instrSelect) {
             rpUI.initiateInstruction(getInstruction(i), _language , readSeconds, recSeconds);
+            wait(2);
         } 
          
-        System.out.println("Show Thanks!");
+        rpUI.initiateThank(_language);
          
      }
          

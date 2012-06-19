@@ -24,12 +24,9 @@ public class RecStateRestPresenter {
         public String getRecState(@PathParam("state") String recState) {
            
              if(recState.equalsIgnoreCase("on")) {
-                 RestPresenter.rpUI.startRec();
+                 RestPresenter.rpUI.showRecAnimation(10);
              }
-             
-              if(recState.equalsIgnoreCase("off")) {
-                 RestPresenter.rpUI.stopRec();
-             }
+                     
              
                   
             return "OK";
