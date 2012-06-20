@@ -5,13 +5,18 @@
 <entry key="selection.count">5</entry>     
 <entry key="read.seconds">3</entry> 
 <entry key="rec.seconds">7</entry>
-
+<entry key="explain.seconds">5</entry>
 
 <entry key="aw.count">15</entry>     
 
-<entry key="aw.intro.deText">Euch werden hintereinander\n5 verschiedene Begrifflichkeiten angezeigt.\nIhr habt jeweils 15 Sekunden Zeit,\num den Begriff pantomimisch zu erklären.\n\nViel Spass!</entry>     
+<entry key="aw.intro.deText">Euch werden hintereinander5 verschiedene Begrifflichkeiten angezeigt. Ihr habt jeweils 15 Sekunden Zeit, um den Begriff pantomimisch zu erklären. Viel Spass!</entry>     
 <entry key="aw.intro.enText">Hello my dear!!!#Ihr habt jeweils 15 Sekunden Zeit, um den Begriff pantomimisch zu erklären.\nViel Spass!</entry>     
 <entry key="aw.intro.esText">Cochones!!!\nIhr habt jeweils 15 Sekunden Zeit, um den Begriff pantomimisch zu erklären.\nViel Spass!</entry>     
+
+<entry key="aw.explan.deText">Bitte stellt diesen Begriff dar!</entry>     
+<entry key="aw.explan.enText">Please play act to pantomime!</entry>     
+<entry key="aw.explan.esText">Cochones!!!</entry>     
+
 
 <entry key="aw.thank.deText">Ihr habt es geschafft!\n\nVielen Dank für euer Mitmachen!</entry>     
 <entry key="aw.thank.enText">You made it!\n\nThank you for your effort!</entry>     

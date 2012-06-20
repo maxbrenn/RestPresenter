@@ -30,6 +30,7 @@ public class RestPresenter {
     public static int selectionCount;
     public static int readSeconds;
     public static int recSeconds;
+    public static int explainSeconds;
     public static int screenWidth;
     public static int screenHeight;
 
@@ -58,6 +59,11 @@ public class RestPresenter {
                } else {
                    System.out.println("please set property rec.seconds=n");
                }
+                if(props.getProperty("explain.seconds")!=null) {
+                   explainSeconds = Integer.parseInt(props.getProperty("explain.seconds"));
+               } else {
+                   System.out.println("please set property explain.seconds=n");
+               }
                
                 
                instructions = parseInstructions(props);
@@ -65,11 +71,11 @@ public class RestPresenter {
         
         
         
-         final String baseUri = "http://localhost:8080/";
+         final String baseUri = "http://localhost:8081/";
              final Map<String, String> initParams = new HashMap<String, String>();
  
              initParams.put("com.sun.jersey.config.property.packages", 
-                     "restpresenter");
+                     "restpresenter.resources");
 
             System.out.println("Starting grizzly...");
         try {
@@ -198,14 +204,16 @@ public class RestPresenter {
          
          System.out.println("Start Recording Session!");
          
-        rpUI.initiateIntro(_language);
          
-        
+         wait(2);
+         
+        rpUI.initiateIntro(_language);
+                 
          
           int[] instrSelect = getInstructionSelection();
             
         for(int i : instrSelect) {
-            rpUI.initiateInstruction(getInstruction(i), _language , readSeconds, recSeconds);
+            rpUI.initiateInstruction(getInstruction(i), _language , readSeconds, recSeconds,explainSeconds);
             wait(2);
         } 
          

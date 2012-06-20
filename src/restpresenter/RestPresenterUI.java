@@ -25,164 +25,196 @@ public class RestPresenterUI extends javax.swing.JFrame {
      */
     public RestPresenterUI() {
         initComponents();
-        
+
     }
-    
-    
-    public void initiateInstruction(Instruction _instruction, Language _language , int _readSeconds, int _recSeconds) {
-        
-               
-        String instrText = "";
-        
-        if(_language == Language.de) {
-            instrText = _instruction.deText;
-        }
-        if(_language == Language.en) {
-            instrText = _instruction.enText;
-        }
-        if(_language == Language.es) {
-            instrText = _instruction.esText;
-        }
-        
-        
-         showInstruction(instrText);
-        
-        
-        wait(_readSeconds);
-        
-        showRecAnimation(_recSeconds);
-//        startRec();
-        
-        wait(_recSeconds);
-        
-        showInstruction("");
-              
-//        stopRec();
-       
-    }
-    
-    
-    
-    
-        public void initiateIntro(Language _language) {
-        
-               
+
+    public void initiateIntro(Language _language) {
+
+
         String introText = "";
-        
-        if(_language == Language.de) {
-           introText = RestPresenter.props.getProperty("aw.intro.deText");
+
+        if (_language == Language.de) {
+            introText = RestPresenter.props.getProperty("aw.intro.deText");
         }
-        if(_language == Language.en) {
+        if (_language == Language.en) {
             introText = RestPresenter.props.getProperty("aw.intro.enText");
         }
-        if(_language == Language.es) {
+        if (_language == Language.es) {
             introText = RestPresenter.props.getProperty("aw.intro.esText");
         }
-        
-        showInstruction(introText);
-        
-        wait(10);
-        
-        showInstruction("");
-        
-                
+
+        showInstruction(introText, 10);
+
+        wait(12);
+
     }
-    
-        
-               public void initiateThank(Language _language) {
-        
-               
-        String thankText = "";
-        
-        if(_language == Language.de) {
-           thankText = RestPresenter.props.getProperty("aw.thank.deText");
+
+    public void initiateInstruction(Instruction _instruction, Language _language, int _readSeconds, int _recSeconds, int _explainSeconds) {
+
+
+
+
+        String instrText = "";
+        String explanText = "";
+
+        if (_language == Language.de) {
+            instrText = _instruction.deText;
+            explanText = RestPresenter.props.getProperty("aw.explan.deText");
+
         }
-        if(_language == Language.en) {
+        if (_language == Language.en) {
+            instrText = _instruction.enText;
+            explanText = RestPresenter.props.getProperty("aw.explan.enText");
+        }
+        if (_language == Language.es) {
+            instrText = _instruction.esText;
+            explanText = RestPresenter.props.getProperty("aw.explan.esText");
+        }
+
+
+        showExplanation(explanText, _explainSeconds);
+        wait(2);
+        
+        showInstruction(instrText, _readSeconds + _recSeconds);
+        wait(_readSeconds);
+
+        showRecAnimation(_recSeconds);
+        wait(_recSeconds);
+
+       
+
+
+
+    }
+
+    public void initiateThank(Language _language) {
+
+
+        String thankText = "";
+
+        if (_language == Language.de) {
+            thankText = RestPresenter.props.getProperty("aw.thank.deText");
+        }
+        if (_language == Language.en) {
             thankText = RestPresenter.props.getProperty("aw.thank.enText");
         }
-        if(_language == Language.es) {
+        if (_language == Language.es) {
             thankText = RestPresenter.props.getProperty("aw.thank.esText");
         }
-        
-        showInstruction(thankText);
-        
-        wait(10);
-        
-        showInstruction("");
-        
-                
-    }
-        
-        
 
-    public void showInstruction(String _instruction) {
-        
-        
+        showInstruction(thankText, 10);
+
+
+
+    }
+
+    public void showInstruction(String _instruction, int _duration) {
+
+
         _instruction = _instruction.replace("\\n", "<br>");
         _instruction = "<html><center>" + _instruction + "</center></html>";
-                       
-        instructionLabel.setText(_instruction);
+
+        final String instruction = _instruction;
+        final int duration = _duration;
         
+        new Thread() {
+            
+            public void run(){
         
-        
-       
+        instructionLabel.setText(instruction);
+                try {
+                    sleep(duration*1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(RestPresenterUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+        instructionLabel.setText("");
+
+            }
+        }.start();
         
     }
-    
-     public void showRecAnimation(int _seconds) {
-            
-         final int seconds = _seconds;
+
+    public void showExplanation(String _explanation, int _duration) {
+
          
-         System.out.println("Timer started!");
-         
-         
-         
-           new Thread() {
+                  
+        _explanation = _explanation.replace("\\n", "<br>");
+        _explanation = "<html><center>" + _explanation + "</center></html>";
+
+        
+        final int duration = _duration;
+        final String explanation = _explanation;
+        
+        new Thread() {
 
             public void run() {
-         
-            
-            
-            boolean isON = true;
-            
-            DecimalFormat df =   new DecimalFormat  ( "00" );
+        
+        explanationLabel.setText(explanation);
+                try {
+                    sleep(duration*1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(RestPresenterUI.class.getName()).log(Level.SEVERE, null, ex);
+                }
 
-            
-            timerLabel.setVisible(true);
-            recLabel.setVisible(true);
-            
-            for(int i = seconds;i>=0;i--) {
-                
-                recLED.setVisible(isON);
-                
-                timerLabel.setText("00:" + df.format(i));
+        explanationLabel.setText("");
+
+            }
+        }.start();
+
+    }
+
+    public void showRecAnimation(int _seconds) {
+
+        final int seconds = _seconds;
+
+        System.out.println("Timer started!");
+
+
+
+        new Thread() {
+
+            public void run() {
+
+
+
+                boolean isON = true;
+
+                DecimalFormat df = new DecimalFormat("00");
+
+
+                timerLabel.setVisible(true);
+                recLabel.setVisible(true);
+
+                for (int i = seconds; i >= 0; i--) {
+
+                    recLED.setVisible(isON);
+
+                    timerLabel.setText("00:" + df.format(i));
                     try {
                         sleep(1000);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(RestPresenterUI.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                
-                    if(isON) {
-                        isON=false;
+
+                    if (isON) {
+                        isON = false;
                     } else {
-                        isON=true;
+                        isON = true;
                     }
-                    
-            }      
-            
-            timerLabel.setVisible(false);
-            recLabel.setVisible(false);
-            recLED.setVisible(false);
-            
+
+                }
+
+                timerLabel.setVisible(false);
+                recLabel.setVisible(false);
+                recLED.setVisible(false);
+
             }
+        }.start();
 
-           }.start();
 
-            
-        }
-    
-            
-            
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -196,10 +228,10 @@ public class RestPresenterUI extends javax.swing.JFrame {
         recLabel = new javax.swing.JLabel();
         instructionLabel = new javax.swing.JLabel();
         timerLabel = new javax.swing.JLabel();
+        explanationLabel = new javax.swing.JLabel();
         backgroundPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(java.awt.Color.white);
         setUndecorated(true);
@@ -216,19 +248,22 @@ public class RestPresenterUI extends javax.swing.JFrame {
         getContentPane().add(recLabel);
         recLabel.setBounds(978, 28, 205, 124);
 
-        instructionLabel.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        instructionLabel.setFont(new java.awt.Font("Tahoma", 1, 64)); // NOI18N
         instructionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        instructionLabel.setText("test message");
         instructionLabel.setMaximumSize(new java.awt.Dimension(1200, 58));
         instructionLabel.setMinimumSize(new java.awt.Dimension(1200, 58));
         instructionLabel.setPreferredSize(new java.awt.Dimension(1200, 58));
         getContentPane().add(instructionLabel);
-        instructionLabel.setBounds(0, 210, 1220, 390);
+        instructionLabel.setBounds(0, 290, 1220, 310);
 
         timerLabel.setFont(new java.awt.Font("Tahoma", 1, 102)); // NOI18N
         timerLabel.setText("00:00");
         getContentPane().add(timerLabel);
         timerLabel.setBounds(90, 40, 350, 124);
+
+        explanationLabel.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        getContentPane().add(explanationLabel);
+        explanationLabel.setBounds(430, 220, 350, 110);
 
         backgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
         backgroundPanel.setLayout(null);
@@ -246,41 +281,35 @@ public class RestPresenterUI extends javax.swing.JFrame {
         instructionLabel.setText(_message);
 
     }
-    
+
     public void countDown(int _seconds) {
-        
-        
-        
-        
     }
 
+    public void initScreen() {
 
- 
-
-    public void initScreen(){
-        
         recLED.setVisible(false);
         recLabel.setVisible(false);
         timerLabel.setVisible(false);
-      
-        
+
+
         recLED.setLocation(RestPresenter.screenWidth - 400, 5);
         recLabel.setLocation(RestPresenter.screenWidth - 270, 25);
-        timerLabel.setLocation(50, 25);  
-        
+        timerLabel.setLocation(50, 25);
+
         backgroundPanel.setBounds(0, 0, RestPresenter.screenWidth, RestPresenter.screenHeight);
-        
-        instructionLabel.setBounds(0, Math.round(RestPresenter.screenHeight/2)-400, RestPresenter.screenWidth, Math.round(RestPresenter.screenHeight/2)+200);
+
+        instructionLabel.setBounds(0, Math.round(RestPresenter.screenHeight / 2) - 200, RestPresenter.screenWidth, Math.round(RestPresenter.screenHeight / 2) + 200);
+        explanationLabel.setBounds(100, Math.round(RestPresenter.screenHeight / 2) - 300, RestPresenter.screenWidth - 100, Math.round(RestPresenter.screenHeight / 2) - 200);
 
     }
-    
-    public void wait(int _seconds){
+
+    public void wait(int _seconds) {
         try {
             Thread.sleep(_seconds * 1000);
         } catch (InterruptedException ex) {
             Logger.getLogger(RestPresenterUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     public static void main(String args[]) {
@@ -323,6 +352,7 @@ public class RestPresenterUI extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel backgroundPanel;
+    private javax.swing.JLabel explanationLabel;
     private javax.swing.JLabel instructionLabel;
     private javax.swing.JLabel recLED;
     private javax.swing.JLabel recLabel;
